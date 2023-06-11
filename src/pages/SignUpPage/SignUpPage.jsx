@@ -22,8 +22,7 @@ export default function SignUpPage() {
         e.preventDefault()
         setIsLoading(true)
 
-        console.log(form)
-
+      
      await apiAuth.signUp(form)
         .then(res => {
             setIsLoading(false)
@@ -31,7 +30,7 @@ export default function SignUpPage() {
         })
         .catch(err => {
             setIsLoading(false)
-            console.log(err.response.data.message)
+            alert(err.response.data.error.message)
         })
     }
 

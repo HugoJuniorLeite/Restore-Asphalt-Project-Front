@@ -37,7 +37,7 @@ export default function SignInPage() {
              })
              .catch(err => {
                  setIsLoading(false)
-                 alert(err.response.data.message)
+                 alert(err.response.data.error.message)
              })
      }
 
