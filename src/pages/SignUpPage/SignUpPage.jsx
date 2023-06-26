@@ -7,7 +7,6 @@ import { useNavigate } from "react-router-dom"
 import { useState } from "react"
 import { ThreeDots } from "react-loader-spinner"
 import apiAuth from "../../services/apiAuth"
-//import { Container } from "./styled"
 
 export default function SignUpPage() {
     const [form, setForm] = useState({ email: "", password: "", userType: ""})
@@ -30,7 +29,7 @@ export default function SignUpPage() {
         })
         .catch(err => {
             setIsLoading(false)
-            alert(err.response.data.error.message)
+            alert(err.response.data.message)
         })
     }
 
@@ -71,7 +70,7 @@ export default function SignUpPage() {
                 </StyledButton>
             </StyledForm>
 
-            <StyledLink to="/">
+            <StyledLink to="/home">
                 Já tem uma conta? Faça login!
             </StyledLink>
         </Container>
